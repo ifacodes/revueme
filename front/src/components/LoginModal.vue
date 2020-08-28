@@ -1,7 +1,17 @@
 <template>
 
     <modal name="modal-login">
-        Login Modal Test
+        <header>
+            <slot name="header"/>
+        </header>
+        <main>
+            <slot name="main">
+                Login Modal Test
+            </slot>
+        </main>
+        <footer>
+            <slot name="footer"/>
+        </footer>
     </modal>
     
 </template>

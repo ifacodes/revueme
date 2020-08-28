@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <button @click="buttonTrigger('login')">show modal</button>
-    <login-modal ref="login" />
+    <button @click="buttonTrigger($refs.login.show())">show modal</button>
+    <login-modal ref="login">
+      <template v-slot:header>
+        <h1> Header Slot! </h1>
+      </template>
+    </login-modal>
     <HelloWorld msg="Hello World"/>
   </div>
 </template>
@@ -18,8 +22,9 @@ export default {
     LoginModal
   },
   methods: {
-    buttonTrigger(t_ref) {
-      this.$refs[t_ref].show()
+    // allows me to reuse this function for any button to execute arbitrary methods
+    buttonTrigger(x) {
+      return x;
     }
   },
   mounted() {
