@@ -4,25 +4,26 @@
     <button @click="buttonTrigger($refs.login.show())">show modal</button>
     <login-modal ref="login">
       <template v-slot:header>
-        <h1> Header Slot! </h1>
+        <h1> Welcome to A&A </h1>
+        <h4> Sign in to your Account </h4>
       </template>
     </login-modal>
-    <HelloWorld msg="Hello World"/>
+    <!--<HelloWorld msg="Hello World"/>-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 import LoginModal from './components/LoginModal.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     LoginModal
   },
   methods: {
-    // allows me to reuse this function for any button to execute arbitrary methods
+    // ref doesn't exist until after render
+    // this allows me to reuse this function for any button to execute arbitrary methods
     buttonTrigger(x) {
       return x;
     }
