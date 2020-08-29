@@ -1,6 +1,12 @@
 <template>
     <div class="modal-container">
-        <modal @opened="log" :adaptive="true" styles="border-radius: 12px" name="modal-login">
+        <modal @opened="log" 
+                :adaptive="true" 
+                styles="border-radius: 12px" 
+                name="modal-login"
+                :width="425"
+                :height="450">
+
             <header>
                 <slot name="header"/>
             </header>
@@ -54,7 +60,11 @@ header {
     text-align: left;
     padding: 0 10pt;
     h1 {
-
+        font-size: 24pt;
+        font-weight: 700;
+    }
+    h2 {
+        font-weight: bold;
     }
 }
 

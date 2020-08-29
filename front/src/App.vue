@@ -4,7 +4,7 @@
     <button @click="buttonTrigger($refs.login.show())">show modal</button>
     <login-modal ref="login">
       <template v-slot:header>
-        <h1> Welcome to A&A </h1>
+        <h2> Welcome to A&A </h2>
         <h4> Sign in to your Account </h4>
       </template>
     </login-modal>
