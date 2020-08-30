@@ -18,7 +18,9 @@
             </main>
             <footer>
                 <slot name="footer">
-
+                    <a id="forgot-password"> Forgot your Password? </a>
+                    <material-button buttonText="Login"/>
+                    <a id="sign-up"> Don't have an account? <b>Sign Up!</b> </a>
                 </slot>
             </footer>
         </modal>
@@ -30,16 +32,15 @@
 <script>
 
 import MaterialInput from './MaterialInputBox.vue'
+import MaterialButton from './MaterialButton.vue'
 
 export default {
     name: "login-modal",
     components: {
-        MaterialInput
+        MaterialInput,
+        MaterialButton
     },
-    props: {
-        width: Number,
-        height: Number,
-    },
+    props: [ 'width', 'height' ],
     methods: {
         show() {
             this.$modal.show('modal-login');
@@ -53,50 +54,70 @@ export default {
     },
     mount() {
         this.hide()
-    },
-    computed: {
-        modalWidth(){
-            return { '--modal-width': this.width }
-        },
-        modalHeight(){
-            return { '--modal-height': this.height }
-        }
-    }
-    
+    } 
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-$modal-width: var(--modal-width);
-$modal-height: var(--modal-height);
+@import '../assets/styles/colour.scss';
 
-header {
-    text-align: left;
-    padding: 0 10pt;
-    h1 {
-        font-size: 24pt;
-        font-weight: 700;
+.modal-container {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: space-around;
+
+    header {
+        text-align: left;
+        padding: 10% 15% 0;
+        ::v-deep h2 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        ::v-deep h4 {
+            color: $primary-colour-dark;
+            font-weight: 700;
+            margin-top: 5%;
+        }
     }
-    h2 {
-        font-weight: bold;
-    }
-}
 
-main {
-    padding: 10px 0;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
-    input[type=email], input[type=password]{
-        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.35);
-        transition: ease-in 0.2s;
-        &:focus {
-            box-shadow: inset 0 -1px 0 rgba(132, 77, 204, 0.726);
-            transition: ease-in 0.2s;
+    main {
+        padding: 5% 0;
+         display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: space-around;
+    }
+
+    footer {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: space-around;
+
+        a {
+
+            &#forgot-password {
+                line-height: 100%;
+                margin: -2% 15% auto 0;
+                
+                text-align: right;
+            }
+
+            &#sign-up {
+                margin: 2% auto;
+            }
+
         }
     }
 }
