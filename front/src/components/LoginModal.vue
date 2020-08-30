@@ -4,8 +4,8 @@
                 :adaptive="true" 
                 styles="border-radius: 12px" 
                 name="modal-login"
-                :width="425"
-                :height="450">
+                :width="width"
+                :height="height">
 
             <header>
                 <slot name="header"/>
@@ -36,6 +36,10 @@ export default {
     components: {
         MaterialInput
     },
+    props: {
+        width: Number,
+        height: Number,
+    },
     methods: {
         show() {
             this.$modal.show('modal-login');
@@ -49,12 +53,23 @@ export default {
     },
     mount() {
         this.hide()
+    },
+    computed: {
+        modalWidth(){
+            return { '--modal-width': this.width }
+        },
+        modalHeight(){
+            return { '--modal-height': this.height }
+        }
     }
     
 }
 </script>
 
 <style lang="scss">
+
+$modal-width: var(--modal-width);
+$modal-height: var(--modal-height);
 
 header {
     text-align: left;
