@@ -1,6 +1,6 @@
 <template>
     <div id="input-container">
-        <input placeholder="invisible" required pattern=".*\S.*">
+        <input :type='type' :placeholder="placeholder" required pattern=".*\S.*">
         <label> {{placeholder}} </label>
     </div>
 </template>
@@ -8,7 +8,7 @@
 <script>
 export default {
     name: "material-input",
-    props: ['placeholder']
+    props: ['placeholder', 'type']
 }
 </script>
 
