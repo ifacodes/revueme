@@ -1,19 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    
     <button @click="buttonTrigger($refs.login.show())">show modal</button>
+
     <login-modal width='20%' height='50%' ref="login"> <!-- set this to different size values for mobile bleh -->
+
       <template v-slot:header>
-        <h2> Welcome to A&A </h2>
+        <h2> Welcome to A&A </h2>         <!-- move these into the modal because I'm not making it a reusable component lmao -->
         <h4> Sign in to your Account </h4>
       </template>
+
     </login-modal>
-    <!--<HelloWorld msg="Hello World"/>-->
+
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+
 import LoginModal from './components/LoginModal.vue'
 
 export default {
