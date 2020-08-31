@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+
+    <fixed-bar :navLinks="[{'name': 'home', 'link': 'test'}, {'name': 'projects', 'link': 'test'}]">
+      
+    </fixed-bar>
     <img alt="Vue logo" src="./assets/logo.png">
     
     <button @click="buttonTrigger($refs.login.show())">show modal</button>
@@ -19,11 +23,13 @@
 <script>
 
 import LoginModal from './components/LoginModal.vue'
+import FixedBar from './components/FixedBar.vue'
 
 export default {
   name: 'App',
   components: {
-    LoginModal
+    LoginModal,
+    FixedBar
   },
   methods: {
     // ref doesn't exist until after render
