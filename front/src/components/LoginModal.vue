@@ -104,6 +104,7 @@ export default {
         justify-content: space-between;
         align-items: stretch;
         align-content: space-around;
+        transition: ease-in 0.2s;
 
         a {
 
@@ -116,6 +117,12 @@ export default {
 
             &#sign-up {
                 margin: 2% auto;
+            }
+
+            &:hover {
+                cursor: pointer;
+                transition: ease-in 0.2s;
+                text-decoration: underline;
             }
 
         }

@@ -36,7 +36,7 @@ button {
 
         background: $secondary-colour;
         transition: ease-in 0.2s;
-
+        cursor: pointer;
     }
 }
 

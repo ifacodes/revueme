@@ -20,7 +20,7 @@ div#input-container {
     
     position: relative;
 
-    //margin: 5% 0;
+    // FIX TEXT VERTICAL POSITIONING IN INPUT 
 
     input {
         font-size: 18pt;
@@ -57,6 +57,7 @@ div#input-container {
         top: 37%;
         color: #000;
         transition: all 0.2s ease;
+        pointer-events: none;
     }
 }
 </style>

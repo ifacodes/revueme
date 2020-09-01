@@ -31,11 +31,12 @@ export default {
     left: 0;
     z-index: 9999;
     width: 100%;
-    height: 50px;
+    height: 7%;
     background: #000;
     color: #fff;
 
     ul {
+
         margin: 0;
         display: flex;
         flex-direction: row;
@@ -45,16 +46,27 @@ export default {
         align-content: stretch;
         list-style: none;
         height:100%;
+
         li {
             display: flex;
+            justify-content: center;
             align-items: center;
+
+            min-width: 10%;
             padding: 0 20px;
             margin: 0 50px;
+
+            font-size: 16pt;
+            font-weight: 600;
+
             &:hover {
                 background: oldlace;
+                color: #000;
             }
+
         }
     }
+
 }
 
 
